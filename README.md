@@ -16,13 +16,18 @@
 
 파일이 없는 동안은 "캡처 자리" 표시가 보입니다. 파일을 넣으면 표시가 사라지고 이미지가 그대로 들어갑니다.
 
-## 배포 (GitHub Pages)
+## 배포 (GitHub Pages) — 운영 중
 
-1. GitHub에서 새 저장소 `nutrifit-site` 생성 (Public)
-2. 이 폴더(`site/`)의 내용을 그 저장소로 push (`.nojekyll` 포함)
-3. 저장소 **Settings → Pages → Build and deployment**: Source = *Deploy from a branch*, Branch = `main` / `(root)` → Save
-4. 1~2분 뒤 `https://<계정>.github.io/nutrifit-site/` 에서 확인
-5. `index.html`의 `og:image`를 `https://<계정>.github.io/nutrifit-site/assets/og.png`로 바꿔 카카오톡 미리보기 확인
+**주소: https://chayoyo3-hash.github.io/nutrifit-site/** (저장소 `github.com/chayoyo3-hash/nutrifit-site`, 2026-09-29 배포)
+
+이 폴더(`site/`)가 원본입니다. 고친 뒤 저장소 루트에서 한 줄:
+
+```powershell
+.\scripts\deploy_site.ps1 -Message "docs: 캡처 교체"
+```
+
+스크립트가 `nutrifit-site` 저장소를 `%TEMP%`에 받아 `site/`를 그대로 복사하고 `main`·`gh-pages`에 push합니다(Pages는 `gh-pages`를 서빙). 1~2분 뒤 반영됩니다.
+`og:image`·`og:url`은 이미 배포 주소 기준 절대 URL입니다.
 
 ## 도메인 연결 (지원금 승인 후)
 
